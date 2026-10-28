@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="أدواتي: مجموعة أدوات مجانية لمعالجة PDF والصور والنصوص والحسابات وأدوات المطورين، مباشرة من متصفحك.">
+  <meta name="robots" content="index, follow">
+  <title>أدواتي - 55 أداة مجانية على الإنترنت</title>
+
+  <link rel="icon" href="favicon.png/favicon.png.jpeg" type="image/png" herf="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF processing -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- Word document processing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.js"></script>
+
+  <!-- QR codes and barcodes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="العودة إلى الصفحة الرئيسية">
+        <span class="logo-mark">أ</span>
+        <span>أدواتي</span>
+        <span class="count">55 أداة</span>
+      </a>
+
+      <div class="header-actions">
+        <label class="search-wrap" for="search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="search"
+            placeholder="ابحث عن أداة..."
+            autocomplete="off"
+            aria-label="البحث عن أداة"
+          >
+        </label>
+
+        <button
+          type="button"
+          class="dark-btn"
+          id="darkBtn"
+          aria-label="تغيير المظهر"
+          title="تغيير المظهر"
+        >🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        أدوات مجانية وسهلة الاستخدام
+      </div>
+
+      <h1>كل أدواتك في <span>مكان واحد.</span></h1>
+
+      <p>
+        عالج ملفات PDF والصور والنصوص، واستخدم الحاسبات وأدوات المطورين
+        مباشرة من متصفحك.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong id="totalTools">55</strong>
+          <span>أداة</span>
+        </div>
+        <div class="stat">
+          <strong>7</strong>
+          <span>تصنيفات</span>
+        </div>
+        <div class="stat">
+          <strong>مجاني</strong>
+          <span>للاستخدام</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="tabs" id="tabs" aria-label="تصنيفات الأدوات">
+      <!-- التصنيفات ينشئها script.js -->
+    </nav>
+
+    <section class="main">
+      <aside class="menu-panel" id="menuPanel">
+        <div class="panel-heading">
+          <h2>جميع الأدوات</h2>
+          <span id="menuCount">55</span>
+        </div>
+
+        <div class="menu" id="menu">
+          <!-- القائمة ينشئها script.js -->
+        </div>
+      </aside>
+
+      <section class="content" aria-label="الأدوات">
+        <div class="content-heading" id="contentHeading">
+          <div>
+            <h2 id="sectionTitle">اكتشف الأدوات</h2>
+            <p id="sectionDescription">
+              اختر الأداة المناسبة وابدأ الاستخدام مجاناً.
+            </p>
+          </div>
+        </div>
+
+        <div class="tools-grid" id="toolsGrid">
+          <!-- بطاقات الأدوات ينشئها script.js -->
+        </div>
+
+        <section class="tool-view hidden" id="toolView" aria-live="polite">
+          <!-- واجهة الأداة المختارة -->
+        </section>
+
+        <div class="empty-state hidden" id="emptyState">
+          <div class="empty-icon">⌕</div>
+          <h3>لم نعثر على أي أداة</h3>
+          <p>جرّب كلمة بحث أخرى أو اختر تصنيفاً مختلفاً.</p>
+          <button type="button" class="btn btn-secondary" id="clearSearch">
+            عرض جميع الأدوات
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="./" class="footer-logo">أدواتي</a>
+    <p>أدوات مجانية لتسهيل أعمالك اليومية.</p>
+    <p class="footer-copy">
+      © <span id="currentYear"></span> Aadawati. جميع الحقوق محفوظة.
+    </p>
+  </footer>
+
+  <noscript>
+    <div class="noscript-message">
+      يرجى تفعيل JavaScript في المتصفح حتى تتمكن من استخدام الأدوات.
+    </div>
+  </noscript>
+
+  <!-- يجب أن يأتي بعد عناصر الصفحة والمكتبات -->
+  <script src="app.js"></script>
+</body>
+</html>
